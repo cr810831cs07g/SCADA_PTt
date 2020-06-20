@@ -2,20 +2,18 @@ FROM ubuntu:16.04
 MAINTAINER cr810831.cs07g "cr810831.cs07g@nctu.edu.tw"
 RUN apt-get update
 RUN apt-get install -y python-dev python-pip libncurses5-dev git net-tools inetutils-ping nmap scapy
-RUN git clone https://github.com/cr810831cs07g/isf.git /root/isf
-RUN chmod +x /root/isf/isf.py
-RUN git clone https://github.com/cr810831cs07g/mbtget.git /root/mbtget
-WORKDIR /root/mbtget 
-RUN perl Makefile.PL && make && make install 
-WORKDIR /root/
-RUN git clone https://github.com/cr810831cs07g/smod.git /root/smod
-WORKDIR /root/
+RUN git clone https://github.com/cr810831cs07g/SCADA_PTt.git /root/SCADA
+RUN chmod +x /root/SCADA/isf/isf.py
+WORKDIR /root/SCADA/mbtget 
+RUN perl Makefile.PL && make && make install
+WORKDIR /root/SCADA/
 RUN pip install scapy
 RUN pip install --upgrade pip
 RUN pip install gnureadline
 RUN pip install nmap
+RUN pip install python-nmap
 RUN pip install requests
 RUN pip install pycrypto
 RUN pip install --upgrade psutil
 RUN pip install butterfly
-RUN echo "root:123456" | chpasswd
+RUN echo "root:toor" | chpasswd
