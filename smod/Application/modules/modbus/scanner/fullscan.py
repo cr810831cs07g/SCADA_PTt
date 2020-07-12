@@ -117,7 +117,7 @@ class Module:
    				writer.writerows(row_report)
 			#print('support: ' ,supportfunccode)
 			#print('probably: ',probablyfunccode)
-		print('===FULLSCAN FINISH===')
+		print('====FULLSCAN FINISH====')
             
             
             
